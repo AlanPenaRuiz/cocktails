@@ -3,6 +3,7 @@ import { CategoriasContext } from "../context/CategoriasContext";
 import { RecetasContext } from "../context/RecetasContext";
 
 const Formulario = () => {
+  //const [error, setError] = useState(false);
   const [busqueda, guardarBusqueda] = useState({
     nombre: "",
     categoria: "",
@@ -28,9 +29,7 @@ const Formulario = () => {
         guardarConsultar(true);
       }}
     >
-      <fieldset className="text-center">
-        <legend>Busca bebidas por Categoria o Ingrediente</legend>
-      </fieldset>
+      <fieldset className="text-center"></fieldset>
       <div className="row mt-4">
         <div className="col-md-4">
           <input

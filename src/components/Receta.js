@@ -62,7 +62,7 @@ const Receta = ({ receta }) => {
     for (let i = 1; i < 16; i++) {
       if (informacion[`strIngredient${i}`]) {
         ingredientes.push(
-          <li>
+          <li key={i}>
             {informacion[`strIngredient${i}`]} {informacion[`strMeasure${i}`]}
           </li>
         );
@@ -77,42 +77,34 @@ const Receta = ({ receta }) => {
         <h2 className="card-header">{receta.strDrink}</h2>
 
         <img
-          className="card-img-top"
+          className="card_image"
           src={receta.strDrinkThumb}
           alt={`Imagen de ${receta.strDrink}`}
+          onClick={() => {
+            guardarIdReceta(receta.idDrink);
+            handleOpen();
+          }}
         />
 
-        <div className="card-body">
-          <button
-            type="button"
-            className="btn btn-block btn-primary"
-            onClick={() => {
-              guardarIdReceta(receta.idDrink);
-              handleOpen();
-            }}
-          >
-            Ver Receta
-          </button>
-          <Modal
-            open={open}
-            onClose={() => {
-              guardarIdReceta(null);
-              guardarReceta({});
-              handleClose();
-            }}
-          >
-            <div style={modalStyle} className={classes.paper}>
-              <h2>{informacion.strDrink}</h2>
-              <h3 className="mt-4">Instrucciones</h3>
-              <p>{informacion.strInstructions}</p>
+        <Modal
+          open={open}
+          onClose={() => {
+            guardarIdReceta(null);
+            guardarReceta({});
+            handleClose();
+          }}
+        >
+          <div style={modalStyle} className={classes.paper}>
+            <h2>{informacion.strDrink}</h2>
+            <h3 className="mt-4">Instrucciones</h3>
+            <p>{informacion.strInstructions}</p>
 
-              <img className="img-fluid my-4" src={informacion.strDrinkThumb} />
+            <img className="img-fluid my-4" src={informacion.strDrinkThumb} />
 
-              <h3>Ingredientes y cantidades</h3>
-              <ul>{mostrarIngredientes(informacion)}</ul>
-            </div>
-          </Modal>
-        </div>
+            <h3>Ingredientes y cantidades</h3>
+            <ul>{mostrarIngredientes(informacion)}</ul>
+          </div>
+        </Modal>
       </div>
     </div>
   );

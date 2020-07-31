@@ -1,21 +1,63 @@
 html {
-    height: 100%;
+  height: 100%;
 }
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Lato', sans-serif;
-    background-color: #e5e5e5;
-    min-height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+  background-image: url("img/body.jpg");
+  min-height: 100%;
 }
 header {
-    background-color: #ec3a49;
-    color: white;
-    padding: 5rem 0;
+  background-image: url("img/header.jpg");
+  color: white;
+  padding: 2rem 0;
 }
 h1 {
-    color: white;
-    font-weight: 900;
-    text-align: center;
-    font-size: 3rem;
+  color: white;
+  font-weight: 900;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.card {
+  margin: 5rem auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 40px;
+  box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25),
+    -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+  transition: 0.4s;
+  background-color: azure;
+}
+
+.card .card_image {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+}
+
+.card .card_image img {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+  object-fit: fill;
+}
+
+.card:hover {
+  box-shadow: 5px 5px 30px 15px rgba(0, 0, 0, 0.25),
+    -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
+  transform: scale(0.9, 0.9);
+}
+
+@media all and (max-width: 500px) {
+  .card-list {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+  }
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
 }
