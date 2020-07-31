@@ -96,12 +96,12 @@ const Receta = ({ receta }) => {
         >
           <div style={modalStyle} className={classes.paper}>
             <h2>{informacion.strDrink}</h2>
-            <h3 className="mt-4">Instrucciones</h3>
+            <h3 className="mt-4">Steps</h3>
             <p>{informacion.strInstructions}</p>
 
             <img className="img-fluid my-4" src={informacion.strDrinkThumb} />
 
-            <h3>Ingredientes y cantidades</h3>
+            <h3>Ingredients</h3>
             <ul>{mostrarIngredientes(informacion)}</ul>
           </div>
         </Modal>

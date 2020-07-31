@@ -36,7 +36,7 @@ const Formulario = () => {
             name="nombre"
             className="form-control"
             type="text"
-            placeholder="Buscar por ingrediente"
+            placeholder="Search by ingredient"
             onChange={obtenerDatosRecetas}
           ></input>
         </div>
@@ -46,7 +46,7 @@ const Formulario = () => {
             name="categoria"
             onChange={obtenerDatosRecetas}
           >
-            <option value="">-- Seleccion Categoria --</option>
+            <option value="">-- Select category --</option>
             {categorias.map((categoria) => (
               <option key={categoria.strCategory} value={categoria.strCategory}>
                 {categoria.strCategory}
@@ -58,7 +58,7 @@ const Formulario = () => {
           <input
             type="submit"
             className="btn btn-block btn-primary"
-            value="Buscar Bebida"
+            value="Search drink"
           ></input>
         </div>
       </div>
