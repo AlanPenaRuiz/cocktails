@@ -32,15 +32,6 @@ const Formulario = () => {
       <fieldset className="text-center"></fieldset>
       <div className="row mt-4">
         <div className="col-md-4">
-          <input
-            name="nombre"
-            className="form-control"
-            type="text"
-            placeholder="Search by ingredient"
-            onChange={obtenerDatosRecetas}
-          ></input>
-        </div>
-        <div className="col-md-4">
           <select
             className="form-control"
             name="categoria"
