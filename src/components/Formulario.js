@@ -6,7 +6,7 @@ const Formulario = () => {
   //const [error, setError] = useState(false);
   const [busqueda, guardarBusqueda] = useState({
     nombre: "",
-    categoria: "",
+    categoria: "Ordinary Drink",
   });
 
   const { categorias } = useContext(CategoriasContext);
